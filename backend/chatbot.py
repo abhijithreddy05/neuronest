@@ -10,11 +10,13 @@ CORS(app)  # Enable CORS for all routes by default
 
 # Hugging Face API setup
 HF_API_URL = "https://api-inference.huggingface.co/models/j-hartmann/emotion-english-distilroberta-base"
-HF_API_KEY = "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"
+import os
+HF_API_KEY = os.getenv("HF_API_KEY")
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 headers = {"Authorization": f"Bearer {HF_API_KEY}"}
 
 # YouTube API setup
-YOUTUBE_API_KEY = "AIzaSyAAkmrpT1UjF-8DL83nAfMO22EizlKamMc"
+# YOUTUBE_API_KEY = "AIzaSyAAkmrpT1UjF-8DL83nAfMO22EizlKamMc"
 youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
 
 # Mood-to-query mapping
@@ -141,4 +143,4 @@ def chat_endpoint():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=3000)
+    app.run(debug=True, host="0.0.0.0", port=3001)

@@ -259,7 +259,7 @@ function Tests() {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/calculate-score', {
+      const response = await fetch('http://localhost:4000/calculate-score', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
