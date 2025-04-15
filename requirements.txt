@@ -8,6 +8,5 @@ pyasn1_modules==0.4.2
 pyparsing==3.2.3
 rsa==4.9
 six==1.17.0
-numpy==1.26.4  # Keep if a dependency pulls it, otherwise remove
-protobuf  # Let pip resolve the version
-uvicorn
+numpy==1.26.4
+protobuf
